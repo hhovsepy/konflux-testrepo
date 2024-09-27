@@ -19,7 +19,7 @@ metadata:
     appstudio.openshift.io/component: test-component
     pipelines.appstudio.openshift.io/type: build
   generateName: test-component-on-pull-request-
-  namespace: user-ns2
+  namespace: hhovsepy
 spec:
   params:
   - name: dockerfile
@@ -376,4 +376,3 @@ spec:
   #  secret:
   #    secretName: '{{ git_auth_secret }}'
 status: {}
-
