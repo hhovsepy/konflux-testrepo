@@ -14,7 +14,7 @@ metadata:
     appstudio.openshift.io/component: test-component
     pipelines.appstudio.openshift.io/type: build
   name: test-component-on-push
-  namespace: hhovsepy
+  namespace: hhovsepy-tenant
 spec:
   params:
   - name: dockerfile
