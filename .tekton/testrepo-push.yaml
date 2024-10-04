@@ -2,7 +2,7 @@ apiVersion: tekton.dev/v1
 kind: PipelineRun
 metadata:
   annotations:
-    build.appstudio.openshift.io/repo:
+    build.appstudio.openshift.io/repo: https://github.com/hhovsepy/konflux-testrepo?rev={{revision}}
     build.appstudio.redhat.com/commit_sha: '{{revision}}'
     build.appstudio.redhat.com/target_branch: '{{target_branch}}'
     pipelinesascode.tekton.dev/max-keep-runs: "3"
@@ -11,16 +11,16 @@ metadata:
   creationTimestamp: null
   labels:
     appstudio.openshift.io/application: test-component
-    appstudio.openshift.io/component: test-component
+    appstudio.openshift.io/component: konflux-testrepo
     pipelines.appstudio.openshift.io/type: build
-  name: test-component-on-push
+  name: konflux-testrepo-on-push
   namespace: hhovsepy-tenant
 spec:
   params:
   - name: dockerfile
     value: Dockerfile
   - name: git-url
-    value: 'https://github.com/hhovsepy/konflux-testrepo'
+    value: '{{source_url}}'
   - name: output-image
     value: quay.io/repository/redhat-user-workloads/hhovsepy-tenant/test-app/konflux-testrepo:{{revision}}
   - name: path-context
