@@ -25,7 +25,7 @@ spec:
   - name: dockerfile
     value: Dockerfile
   - name: git-url
-    value: '{{source_url}}'
+    value: 'https://github.com/hhovsepy/konflux-testrepo'
   - name: output-image
     value: quay.io/repository/redhat-user-workloads/hhovsepy-tenant/test-app/konflux-testrepo:on-pr-{{revision}}
   - name: path-context
